@@ -1,0 +1,768 @@
+```css
+/* ================================
+   GLOBAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #0f0f0f;
+
+    color: #ffffff;
+
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+
+    display: block;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(15, 15, 15, 0.92);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-container {
+    width: min(1200px, 90%);
+
+    margin: auto;
+
+    min-height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.3rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+
+    gap: 28px;
+}
+
+nav a {
+    font-size: 0.9rem;
+
+    color: #c8c8c8;
+
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+
+    background: none;
+
+    color: #ffffff;
+
+    font-size: 1.6rem;
+
+    cursor: pointer;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 120px 5% 80px;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(5, 18, 41, 0.8),
+            transparent 35%
+        ),
+
+        #0f0f0f;
+}
+
+.hero-content {
+    width: min(1200px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 60px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.small-title {
+    color: #8d9aa3;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(4rem, 9vw, 8rem);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 25px;
+}
+
+.hero h2 {
+    font-size: clamp(1.3rem, 3vw, 2rem);
+
+    font-weight: 400;
+
+    color: #d0d0d0;
+
+    margin-bottom: 20px;
+}
+
+.hero-text > p:not(.small-title) {
+    color: #999999;
+
+    max-width: 500px;
+}
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 0 25px;
+
+    border-radius: 5px;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #051229;
+
+    border: 1px solid #36454F;
+}
+
+.btn-primary:hover {
+    background: #36454F;
+
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    border: 1px solid #555555;
+
+    background: #1A1A1A;
+}
+
+.btn-secondary:hover {
+    background: #2B2B2B;
+
+    transform: translateY(-3px);
+}
+
+
+/* ================================
+   HERO IMAGES
+   ALWAYS SIDE BY SIDE
+================================ */
+
+.hero-images {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    align-items: stretch;
+}
+
+.hero-image {
+    width: 100%;
+
+    height: 520px;
+
+    overflow: hidden;
+
+    background: #1A1A1A;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+.hero-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+.hero-image:hover img {
+    transform: scale(1.05);
+}
+
+
+/* ================================
+   GENERAL SECTIONS
+================================ */
+
+.section {
+    padding: 120px 5%;
+}
+
+.dark-section {
+    background: #1A1A1A;
+}
+
+.section-heading {
+    width: min(800px, 100%);
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+
+    line-height: 1;
+
+    margin-bottom: 20px;
+}
+
+.section-heading > p:last-child {
+    color: #999999;
+}
+
+
+/* ================================
+   PHOTOGRAPHY
+================================ */
+
+.photo-grid {
+    width: min(1200px, 100%);
+
+    margin: auto;
+
+    columns: 3 280px;
+
+    column-gap: 18px;
+}
+
+.photo-item {
+    margin-bottom: 18px;
+
+    break-inside: avoid;
+
+    overflow: hidden;
+
+    background: #1A1A1A;
+
+    cursor: pointer;
+}
+
+.photo-item img {
+    width: 100%;
+
+    height: auto;
+
+    transition:
+        transform 0.6s ease,
+        opacity 0.4s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.04);
+
+    opacity: 0.88;
+}
+
+
+/* ================================
+   VIDEO
+================================ */
+
+.video-grid {
+    width: min(1200px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+.video-card {
+    background: #0f0f0f;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    transition: transform 0.4s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+}
+
+.video-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    background: #000000;
+
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+
+    display: block;
+}
+
+
+/* ================================
+   PROJECT VIDEOS
+================================ */
+
+.project-videos {
+    max-width: 1100px;
+}
+
+
+/* ================================
+   CONTACT
+================================ */
+
+.contact-section {
+    background: #0f0f0f;
+}
+
+.contact-container {
+    width: min(900px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+.contact-card {
+    padding: 35px;
+
+    background: #1A1A1A;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 8px;
+
+    transition: 0.3s ease;
+}
+
+.contact-card:hover {
+    background: #2B2B2B;
+
+    transform: translateY(-4px);
+}
+
+.contact-card span {
+    display: block;
+
+    color: #7e8a92;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.contact-card a {
+    display: block;
+
+    font-size: 1.2rem;
+
+    font-weight: 600;
+
+    margin-bottom: 5px;
+
+    word-break: break-word;
+}
+
+.contact-card a:hover {
+    color: #9baec0;
+}
+
+.contact-card small {
+    color: #777777;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    padding: 30px 5%;
+
+    background: #0a0a0a;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #666666;
+
+    font-size: 0.8rem;
+}
+
+
+/* ================================
+   LIGHTBOX
+================================ */
+
+.lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    background: rgba(0, 0, 0, 0.95);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+
+    max-height: 90vh;
+
+    object-fit: contain;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.lightbox-close {
+    position: absolute;
+
+    top: 25px;
+    right: 35px;
+
+    border: none;
+
+    background: none;
+
+    color: white;
+
+    font-size: 3rem;
+
+    cursor: pointer;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 900px) {
+
+    nav {
+        gap: 15px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .hero {
+        padding-top: 130px;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 700px) {
+
+    .nav-container {
+        min-height: 65px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+
+        top: 65px;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        background: #0f0f0f;
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 18px;
+
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+
+    .hero {
+        padding-top: 110px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+
+        letter-spacing: -3px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+
+    /*
+       IMPORTANT:
+       HERO IMAGES STAY SIDE BY SIDE
+    */
+
+    .hero-images {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+
+        width: 100%;
+    }
+
+    .hero-image {
+        width: 100%;
+
+        height: 350px;
+    }
+
+
+    .section {
+        padding: 90px 5%;
+    }
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+
+    .photo-grid {
+        columns: 2 150px;
+
+        column-gap: 10px;
+    }
+
+    .photo-item {
+        margin-bottom: 10px;
+    }
+
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    footer {
+        flex-direction: column;
+
+        gap: 8px;
+
+        text-align: center;
+    }
+
+}
+
+
+/* ================================
+   SMALL PHONE
+================================ */
+
+@media (max-width: 450px) {
+
+    /*
+       STILL SIDE BY SIDE
+    */
+
+    .hero-images {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 7px;
+    }
+
+    .hero-image {
+        height: 280px;
+    }
+
+
+    .photo-grid {
+        columns: 1;
+    }
+
+}
